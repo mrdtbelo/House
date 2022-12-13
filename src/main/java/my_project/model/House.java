@@ -8,62 +8,85 @@ import java.awt.*;
 
 public class House extends GraphicalObject {
 
-    public House(double x, double y, int height, int width){
+    public House(double x, double y){
         this.x = x;
         this.y = y;
-
     }
-    // height = 140
-    // width = 120
-    // y = 340
-
     public void draw(DrawTool drawTool){
-
-        // Mauer
-        drawTool.setCurrentColor(new Color(200, 162, 200));
-        drawTool.drawFilledRectangle(x,y,  120, 140);
-
-        // Mauerumrandung
+        //Außenwand
+        drawTool.setCurrentColor(new Color(255, 153, 153));
+        drawTool.drawFilledRectangle(x,y,200,165);
         drawTool.setCurrentColor(new Color(0, 0, 0));
-        drawTool.drawRectangle(x,y,120,140);
+        drawTool.drawRectangle(x,y,200,165);
 
-        // Schornstein
-        drawTool.setCurrentColor(new Color(81, 86, 92));
-
-        // Dach
-        drawTool.setCurrentColor(new Color(46, 8, 43));
-        drawTool.drawFilledTriangle(x, y, x+120, y, x+60, y-95);
-
-        // Dachumrandung
+        drawTool.setCurrentColor(new Color(211, 194, 194));
+        drawTool.drawFilledRectangle(x-3,y+145,205,25);
         drawTool.setCurrentColor(new Color(0, 0, 0));
-        drawTool.drawTriangle(x,y,x+120,y,x+60,y-95);
+        drawTool.drawRectangle(x-3,y+145,205,25);
 
-        // Tür
+        drawTool.setCurrentColor(new Color(211, 194, 194));
+        drawTool.drawFilledRectangle(x,y+5,200,15);
         drawTool.setCurrentColor(new Color(0, 0, 0));
-        drawTool.drawFilledRectangle(x+10,y+100, 20, 40);
+        drawTool.drawRectangle(x,y+5,200,15);
 
-        // Fenster
-        drawTool.setCurrentColor(new Color(156, 146, 146));
-        drawTool.drawFilledRectangle(x+20,y+25, 25, 30);
-        drawTool.drawFilledRectangle(x+70,y+25, 25, 30);
-
-        // Fensterumrandungen
+        //Schornstein
+        drawTool.setCurrentColor(new Color(46,8,43));
+        drawTool.drawFilledRectangle(x+10,y-80,30,70);
         drawTool.setCurrentColor(new Color(0, 0, 0));
-        drawTool.drawRectangle(x+20,y+25,25, 30);
-        drawTool.drawRectangle(x+70,y+25,25, 30);
+        drawTool.drawRectangle(x+10,y-80,30,70);
 
-        // Fensterkreuze
-        drawTool.drawLine(x+20,y+40,x+45,y+40);
-        drawTool.drawLine(x+32.5,y+25,x+32.5,y+55);
-        drawTool.drawLine(x+70,y+40,x+95,y+40);
-        drawTool.drawLine(x+82.5,y+25,x+82.5,y+55);
+        //Dach
+        drawTool.setCurrentColor(new Color(195, 33, 72));
+        drawTool.drawFilledTriangle(x-10,y+5,x+210,y+5,x+95,y-110);
+        drawTool.setCurrentColor(new Color(0, 0, 0));
+        drawTool.drawTriangle(x-10,y+5,x+210,y+5,x+95,y-110);
 
-        // Türknauf
-        drawTool.setCurrentColor(new Color(255, 255, 255));
-        drawTool.drawFilledCircle(x+26,y+120,1.5);
+        //Tür
+        drawTool.setCurrentColor(new Color(222, 93, 131));
+        drawTool.drawFilledRectangle(x+75,y+50,50,120);
+        drawTool.setCurrentColor(new Color(0, 0, 0));
+
+        drawTool.drawRectangle(x+75,y+50,50,120);
+        drawTool.setCurrentColor(new Color(170, 152, 169));
+        drawTool.drawFilledRectangle(x+83,y+60,37,50);
+        drawTool.drawFilledRectangle(x+83,y+115,37,50);
+        drawTool.setCurrentColor(new Color(0, 0, 0));
+        drawTool.drawRectangle(x+83,y+60,37,50);
+        drawTool.drawRectangle(x+83,y+115,37,50);
+
+        drawTool.setCurrentColor(new Color(210, 180, 180));
+        drawTool.drawFilledCircle(x+80,y+113,2.5);
+        drawTool.setCurrentColor(new Color(0, 0, 0));
+        drawTool.drawCircle(x+80,y+113,2.5);
+
+        //Fenster
+        drawTool.setCurrentColor(new Color(170, 152, 169));
+        drawTool.drawFilledRectangle(x+15,y+50,50,60);
+        drawTool.setCurrentColor(new Color(0, 0, 0));
+        drawTool.drawRectangle(x+15,y+50,50,60);
+
+        drawTool.setCurrentColor(new Color(170, 152, 169));
+        drawTool.drawFilledRectangle(x+135,y+50,50,60);
+        drawTool.setCurrentColor(new Color(0, 0, 0));
+        drawTool.drawRectangle(x+135,y+50,50,60);
+
+        drawTool.setCurrentColor(new Color(170, 152, 169));
+        drawTool.drawFilledRectangle(x+60,y-50,80,40);
+        drawTool.setCurrentColor(new Color(0, 0, 0));
+        drawTool.drawRectangle(x+60,y-50,80,40);
+
+        //Fensterkreuze
+        drawTool.setCurrentColor(new Color(0, 0, 0));
+        drawTool.drawLine(x+15,y+65,x+65,y+65);
+        drawTool.drawLine(x+40,y+65,x+40,y+110);
+
+        drawTool.drawLine(x+135,y+65,x+185,y+65);
+        drawTool.drawLine(x+160,y+65,x+160,y+110);
+
+        drawTool.drawLine(x+60,y-35,x+140,y-35);
+        drawTool.drawLine(x+100,y-35,x+100,y-10);
 
 
 
-       
     }
 }
