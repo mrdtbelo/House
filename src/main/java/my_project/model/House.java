@@ -8,53 +8,59 @@ import java.awt.*;
 
 public class House extends GraphicalObject {
 
-    public House(){
+    public House(double x, double y, int height, int width){
+        this.x = x;
+        this.y = y;
 
     }
+    // height = 140
+    // width = 120
+    // y = 340
 
     public void draw(DrawTool drawTool){
 
-        // Körper
+        // Mauer
         drawTool.setCurrentColor(new Color(200, 162, 200));
-        drawTool.drawFilledRectangle(320,340,  120, 140);
+        drawTool.drawFilledRectangle(x,y,  120, 140);
 
-        // Körperumrandung
+        // Mauerumrandung
         drawTool.setCurrentColor(new Color(0, 0, 0));
-        drawTool.drawRectangle(320,340,120,140);
+        drawTool.drawRectangle(x,y,120,140);
 
         // Schornstein
         drawTool.setCurrentColor(new Color(81, 86, 92));
 
         // Dach
         drawTool.setCurrentColor(new Color(46, 8, 43));
-        drawTool.drawFilledTriangle(320, 340, 440, 340, 380, 245);
+        drawTool.drawFilledTriangle(x, y, x+120, y, x+60, y-95);
 
         // Dachumrandung
         drawTool.setCurrentColor(new Color(0, 0, 0));
-        drawTool.drawTriangle(320,340,440,340,380,245);
+        drawTool.drawTriangle(x,y,x+120,y,x+60,y-95);
 
         // Tür
         drawTool.setCurrentColor(new Color(0, 0, 0));
-        drawTool.drawFilledRectangle(330,440, 20, 40);
+        drawTool.drawFilledRectangle(x+10,y+100, 20, 40);
 
         // Fenster
         drawTool.setCurrentColor(new Color(156, 146, 146));
-        drawTool.drawFilledRectangle(340,365, 25, 30);
-        drawTool.drawFilledRectangle(390,365, 25, 30);
+        drawTool.drawFilledRectangle(x+20,y+25, 25, 30);
+        drawTool.drawFilledRectangle(x+70,y+25, 25, 30);
 
         // Fensterumrandungen
         drawTool.setCurrentColor(new Color(0, 0, 0));
-        drawTool.drawRectangle(340,365,25, 30);
-        drawTool.drawRectangle(390,365,25, 30);
+        drawTool.drawRectangle(x+20,y+25,25, 30);
+        drawTool.drawRectangle(x+70,y+25,25, 30);
 
-        // Fensterkeruze
-        drawTool.drawLine(340,380,365,380);
-        drawTool.drawLine(352.5,365,352.5,395);
-        drawTool.drawLine(390,380,415,380);
-        drawTool.drawLine(402.5,365,402.5,395);
+        // Fensterkreuze
+        drawTool.drawLine(x+20,y+40,x+45,y+40);
+        drawTool.drawLine(x+32.5,y+25,x+32.5,y+55);
+        drawTool.drawLine(x+70,y+40,x+95,y+40);
+        drawTool.drawLine(x+82.5,y+25,x+82.5,y+55);
 
         // Türknauf
         drawTool.setCurrentColor(new Color(255, 255, 255));
+        drawTool.drawFilledCircle(x+26,y+120,1.5);
 
 
 
