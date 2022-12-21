@@ -42,7 +42,7 @@ public class ProgramController {
         Background b1 = new Background();
         viewController.draw(b1);
 
-        Sun s1 = new Sun();
+        Sun s1 = new Sun(0,0,0);
         viewController.draw(s1);
 
         Tree t2 = new Tree(530,350,45);

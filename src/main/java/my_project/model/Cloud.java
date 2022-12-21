@@ -21,5 +21,19 @@ public class Cloud extends GraphicalObject {
 
     }
 
+    /**
+     * update wird in einer Sekunde mehrmals aufgerufen (ungefähr 28 mal).
+     * Zwischen jedem Aufruf wird die Zeit, die seit dem letzten Aufruf vergangen ist, gemessen und als dt an die Methode übergeben.
+     * @param dt
+     */
+    public void update(double dt){
+        x = x + 100*(radius/100)*dt; //eine Wolke soll sich mit 100 Pixeln / Sekunde nach rechts bewegen
+
+        if(x > 1200){
+            x = -200;
+        }
+
+        //y = y + 20*dt;
+    }
 
 }
